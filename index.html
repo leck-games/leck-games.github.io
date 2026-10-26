@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Sine Rally">
+<meta name="theme-color" content="#ffd23f"><meta name="format-detection" content="telephone=no">
+<meta name="description" content="All Sine Rally builds in one place.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="preload" href="fonts/bangers.woff2" as="font" type="font/woff2" crossorigin>
+<title>Sine Rally · All Builds</title>
+<style>
+@font-face{font-family:Bangers;src:url(fonts/bangers.woff2) format("woff2");font-display:swap}
+:root{--ink:#111;--paper:#f7e6b5;--yel:#ffd23f;--org:#ff6a1a;--f:Bangers,"Arial Black",Impact,system-ui,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--yel);-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{margin:0;min-height:100vh;color:var(--ink);font:600 15px/1.3 system-ui,-apple-system,sans-serif;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+ background:var(--paper) radial-gradient(#e7cf8c 1.3px,transparent 1.8px) 0 0/10px 10px;
+ padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
+.ink{font-family:var(--f);font-weight:400;letter-spacing:1px;color:#fff;-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:3px 3px 0 var(--ink)}
+header{display:flex;align-items:center;gap:12px;margin:0 auto 14px;max-width:1100px}
+header img{width:56px;height:56px;border:3px solid var(--ink);border-radius:12px;box-shadow:3px 3px 0 var(--ink);flex:none}
+h1{margin:0;font-size:40px;line-height:.95;transform:skewX(-6deg)}
+h1 small{display:block;font-size:20px;color:var(--yel)}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;border:4px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;transition:transform .08s,box-shadow .08s}
+.card:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.thumb{position:relative;aspect-ratio:16/9;background:var(--c);border-bottom:4px solid var(--ink)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:10px;top:10px;background:var(--c);color:#fff;font:400 16px/1 var(--f);letter-spacing:1px;padding:5px 9px 4px;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:skewX(-8deg)}
+.play{position:absolute;right:10px;bottom:-22px;width:52px;height:52px;border-radius:50%;background:var(--yel);border:4px solid var(--ink);box-shadow:3px 3px 0 var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px;padding-left:4px}
+.body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.body h2{margin:0;font-size:30px;line-height:1;color:var(--c)}
+.body p{margin:0 64px 0 0;font-weight:700}
+.meta{margin-top:auto;padding-top:6px;font:700 12px ui-monospace,Menlo,monospace;color:#555}
+.meta b{background:var(--ink);color:#fff;padding:1px 5px;border-radius:3px}
+#a2hs{display:none;max-width:1100px;margin:16px auto 0;background:#fff;border:3px solid var(--ink);border-radius:8px;box-shadow:4px 4px 0 var(--ink);padding:8px 12px;font-weight:700}
+.ios #a2hs{display:block}.standalone #a2hs{display:none}
+footer{max-width:1100px;margin:16px auto 0;font-size:12px;font-weight:700;color:#7a6a40;text-align:center}
+@media (orientation:landscape) and (max-height:500px){h1{font-size:32px}h1 small{font-size:17px}header img{width:44px;height:44px}.body h2{font-size:26px}#grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}}
+</style></head><body>
+<header><img src="icons/apple-touch-icon.png" alt=""><h1 class="ink">SINE RALLY<small>ALL BUILDS</small></h1></header>
+<main id="grid"></main>
+<div id="a2hs">📲 iPhone: tap <b>Share</b> → <b>Add to Home Screen</b> to install this launcher (and each game) as an app.</div>
+<footer>leck-games · builds update automatically · <span id="net"></span></footer>
+<script id="builds" type="application/json">[{"id":"sinerally","repo":"sinerally","url":"https://leck-games.github.io/sinerally/","title":"SINE RALLY","tag":"MAIN GAME","desc":"The main game: open-world rally with the plug-in engine sound.","color":"#ff6a1a","thumb":"thumbs/sinerally.jpg","sha":"ded2b8b","date":"2026-10-26T17:58:07Z"},{"id":"physics","repo":"sinerally-physics","url":"https://leck-games.github.io/sinerally-physics/","title":"PHYSICS LAB","tag":"TEST BUILD","desc":"Tree HP, engine heat, car selector and attachments.","color":"#e8453c","thumb":"thumbs/physics.jpg","sha":"941ff56","date":"2026-10-26T17:58:27Z"},{"id":"terrain","repo":"sinerally-terrain","url":"https://leck-games.github.io/sinerally-terrain/","title":"TERRAIN","tag":"TEST BUILD","desc":"Forests, grassland fire and forest weather.","color":"#2f8f4e","thumb":"thumbs/terrain.jpg","sha":"32697ca","date":"2026-10-26T17:58:30Z"},{"id":"enginesim","repo":"sinerally-enginesim","url":"https://leck-games.github.io/sinerally-enginesim/","title":"ENGINE SIM","tag":"SOUND","desc":"Engine sound simulator: build an engine, rev it.","color":"#38c45a","thumb":"thumbs/enginesim.jpg","sha":"ec7c2a6","date":"2026-10-26T17:58:15Z"},{"id":"engine","repo":"sinerally-engine","url":"https://leck-games.github.io/sinerally-engine/","title":"ENGINE TEST","tag":"OLD BUILD","desc":"Older physics / terrain test build.","color":"#4fb3ff","thumb":"thumbs/engine.jpg","sha":"7985921","date":"2026-10-26T17:58:11Z"}]</script>
+<script>
+(function(){
+  var de=document.documentElement, nav=navigator;
+  if(/iP(hone|ad|od)/.test(nav.userAgent)||(nav.platform==='MacIntel'&&nav.maxTouchPoints>1)) de.classList.add('ios');
+  if(nav.standalone||matchMedia('(display-mode: standalone),(display-mode: fullscreen)').matches) de.classList.add('standalone');
+  var B=[]; try{B=JSON.parse(document.getElementById('builds').textContent)}catch(e){}
+  var grid=document.getElementById('grid');
+  function fmt(iso){var d=new Date(iso);return isNaN(d)?'':d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  B.forEach(function(b){
+    var a=document.createElement('a'); a.className='card'; a.href=b.url; a.style.setProperty('--c',b.color); a.id='card-'+b.id;
+    a.innerHTML='<div class="thumb"><img src="'+esc(b.thumb)+'" alt="" loading="lazy" width="640" height="360"><span class="tag">'+esc(b.tag)+'</span><span class="play">▶</span></div>'+
+      '<div class="body"><h2 class="ink">'+esc(b.title)+'</h2><p>'+esc(b.desc)+'</p><div class="meta">UPDATED <span class="d">'+fmt(b.date)+'</span> · <b class="h">'+esc(b.sha)+'</b></div></div>';
+    grid.appendChild(a);
+  });
+  // runtime refresh of commit info (graceful: keeps baked values on any failure / rate limit)
+  var net=document.getElementById('net'); net.textContent='commit info baked at deploy';
+  B.forEach(function(b){
+    var key='c:'+b.repo, c=null; try{c=JSON.parse(sessionStorage.getItem(key))}catch(e){}
+    function apply(sha,date){var el=document.getElementById('card-'+b.id); if(!el||!sha)return; el.querySelector('.h').textContent=sha; el.querySelector('.d').textContent=fmt(date)}
+    if(c&&Date.now()-c.t<6e5){apply(c.sha,c.date);return}
+    if(!window.fetch)return;
+    var ctl=window.AbortController?new AbortController():null; var to=setTimeout(function(){ctl&&ctl.abort()},5000);
+    fetch('https://api.github.com/repos/leck-games/'+b.repo+'/commits?per_page=1',{signal:ctl&&ctl.signal,headers:{Accept:'application/vnd.github+json'}})
+      .then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(to); if(!j||!j[0])return;
+        var sha=j[0].sha.slice(0,7), date=j[0].commit.committer.date; apply(sha,date); net.textContent='commit info live from GitHub';
+        try{sessionStorage.setItem(key,JSON.stringify({sha:sha,date:date,t:Date.now()}))}catch(e){} })
+      .catch(function(){clearTimeout(to)});
+  });
+  if('serviceWorker' in nav && location.protocol==='https:') addEventListener('load',function(){nav.serviceWorker.register('sw.js').catch(function(){})});
+})();
+</script>
+</body></html>
