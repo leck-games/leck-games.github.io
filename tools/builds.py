@@ -1,7 +1,7 @@
 # single source of truth for the launcher cards (order = display order)
 BUILDS = [
  dict(id="sinerally", repo="sinerally", dir="sinerally", url="https://leck-games.github.io/sinerally/", title="SINE RALLY", tag="MAIN GAME",
-      desc="The main game: open-world rally with the plug-in engine sound.", shot="shots/next_3_med_phone.png", color="#ff6a1a"),
+      desc="The main game: open-world rally with 5 cars, tree HP, grass fire, forest weather and an engine sound editor.", shot="shots/merge_treehp.png", color="#ff6a1a"),
  dict(id="physics", repo="sinerally-physics", dir="sinerally-physics", url="https://leck-games.github.io/sinerally-physics/", title="PHYSICS LAB", tag="TEST BUILD",
       desc="Tree HP, engine heat, car selector and attachments.", shot="shots/03-tree-hit-hp.png", color="#e8453c"),
  dict(id="terrain", repo="sinerally-terrain", dir="sinerally-terrain", url="https://leck-games.github.io/sinerally-terrain/", title="TERRAIN", tag="TEST BUILD",
