@@ -29,7 +29,7 @@ const pages = [['launcher', ''], ['sinerally', 'sinerally/'], ['engine', 'sinera
       o.cards = document.querySelectorAll('.card').length;
       o.canvas = [...document.querySelectorAll('canvas')].map((c) => getComputedStyle(c).touchAction + '/' + (getComputedStyle(c).webkitTouchCallout || '?')).slice(0, 1)[0];
       return o; });
-    const bad = errs.length || !info.manifest || info.metas.length || !info.vpFit || (name !== 'launcher' && !info.allBuilds) || (name === 'launcher' && info.cards !== 5) || info.manErr || (info.icons || []).some((s) => !/:200:/.test(s));
+    const bad = errs.length || !info.manifest || info.metas.length || !info.vpFit || (name !== 'launcher' && !info.allBuilds) || (name === 'launcher' && info.cards !== 6) || info.manErr || (info.icons || []).some((s) => !/:200:/.test(s));
     if (bad) fail++;
     console.log(`${bad ? 'FAIL' : 'ok  '} ${name} ${on}`, JSON.stringify(info), errs.length ? '\n   ' + errs.join('\n   ') : '');
     if (shots && name === 'launcher') { await pg.screenshot({ path: `${shots}/launcher-iphone12-${on}.png` }); await pg.screenshot({ path: `${shots}/launcher-iphone12-${on}-full.png`, fullPage: true }); }
